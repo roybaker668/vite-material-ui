@@ -33,20 +33,38 @@ function App() {
       {/* Spacer to prevent content from hiding under NavBar */}
       <Box sx={{ height: '64px' }} />
 
-      {/* Photos */}
-      <Box>
-        {photos.map((photo, index) => (
-          <Box
-            key={index}
-            sx={{
-              height: '100vh',
-              backgroundImage: `url(${photo})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
-        ))}
+      {/* Centered Title */}
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          color: '#ffffff',
+          backgroundColor: '#000000',
+        }}
+      >
+        <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Mountain Man Crew
+        </Typography>
+        <Typography variant="h5">
+          Explore the Toughest Routes in the North East and Beyond
+        </Typography>
       </Box>
+
+      {/* Photos */}
+      {photos.map((photo, index) => (
+        <Box
+          key={index}
+          sx={{
+            height: '100vh',
+            backgroundImage: `url(${photo})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      ))}
     </Box>
   );
 }
