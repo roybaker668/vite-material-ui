@@ -1,35 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { AppBar, Toolbar, Typography, Box, Button } from '@mui/material';
+
+const photos = [
+  '/photo1.jpg',
+  '/photo2.jpg',
+  '/photo3.jpg',
+  '/photo4.jpg',
+  '/photo5.jpg',
+  '/photo6.jpg',
+  '/photo7.jpg',
+  '/photo8.jpg',
+  '/photo9.jpg',
+  '/photo10.jpg',
+  '/photo11.jpg',
+  '/photo12.jpg',
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Box>
+      {/* NavBar */}
+      <AppBar position="fixed" sx={{ backgroundColor: '#333' }}>
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            Mountain Man Crew
+          </Typography>
+          <Button color="inherit">Home</Button>
+          <Button color="inherit">About</Button>
+          <Button color="inherit">Contact</Button>
+        </Toolbar>
+      </AppBar>
+
+      {/* Spacer to prevent content from hiding under NavBar */}
+      <Box sx={{ height: '64px' }} />
+
+      {/* Centered Title */}
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          color: '#ffffff',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+        }}
+      >
+        <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Mountain Man Crew
+        </Typography>
+        <Typography variant="h5">
+          Explore the Toughest Routes in the North East and Beyond
+        </Typography>
+      </Box>
+
+      {/* Photos */}
+      {photos.map((photo, index) => (
+        <Box
+          key={index}
+          sx={{
+            height: '100vh',
+            backgroundImage: `url(${photo})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      ))}
+    </Box>
+  );
 }
 
-export default App
+export default App;
