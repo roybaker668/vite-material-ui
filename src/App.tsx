@@ -1,7 +1,19 @@
 import { AppBar, Toolbar, Typography, Box, Button } from '@mui/material';
-import background1 from '/src/assets/photo1.jpg';
-import background2 from '/src/assets/photo2.jpg';
-import background3 from '/src/assets/photo3.jpg';
+
+const photos = [
+  '/photo1.jpg',
+  '/photo2.jpg',
+  '/photo3.jpg',
+  '/photo4.jpg',
+  '/photo5.jpg',
+  '/photo6.jpg',
+  '/photo7.jpg',
+  '/photo8.jpg',
+  '/photo9.jpg',
+  '/photo10.jpg',
+  '/photo11.jpg',
+  '/photo12.jpg',
+];
 
 function App() {
   return (
@@ -23,30 +35,17 @@ function App() {
 
       {/* Photos */}
       <Box>
-        <Box
-          sx={{
-            height: '100vh',
-            backgroundImage: `url(${background1})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <Box
-          sx={{
-            height: '100vh',
-            backgroundImage: `url(${background2})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <Box
-          sx={{
-            height: '100vh',
-            backgroundImage: `url(${background3})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+        {photos.map((photo, index) => (
+          <Box
+            key={index}
+            sx={{
+              height: '100vh',
+              backgroundImage: `url(${photo})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        ))}
       </Box>
     </Box>
   );
