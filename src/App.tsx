@@ -42,7 +42,7 @@ function App() {
           alignItems: 'center',
           flexDirection: 'column',
           color: '#ffffff',
-          backgroundColor: '#000000',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
         }}
       >
         <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 2 }}>
